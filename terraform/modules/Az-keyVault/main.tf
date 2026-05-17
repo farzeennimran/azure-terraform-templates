@@ -1,0 +1,20 @@
+//KEY VAULT
+resource "azurerm_key_vault" "keyVault" {
+  name                        = var.key_vault_name
+  location                    = var.location
+  resource_group_name         = var.resource_group_name
+  sku_name                    = var.sku_name
+  tenant_id                   = var.tenant_id
+
+  soft_delete_retention_days  = var.soft_delete_retention_days
+  purge_protection_enabled    = var.purge_protection_enabled
+
+#   network_acls {
+#     default_action             = var.network_acls_default_action
+#     bypass                     = var.network_acls_bypass
+#     virtual_network_subnet_ids = var.network_acls_virtual_network_subnet_ids
+#     ip_rules                   = var.network_acls_ip_rules
+#   }
+
+  //hsm                         = var.hsm
+}
